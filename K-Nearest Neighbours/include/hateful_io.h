@@ -4,15 +4,15 @@
 
 enum Genre {MALE, FEMALE};
 
-struct donnee {
+typedef struct donnee {
     enum Genre genre;
     int taille;
     int poids;
     int imc;
-} typedef t_donnee;
+}t_donnee;
 
 //Il faut mettre un pointeur aulieu de mettre un tableau directement.
-void lire_fichier(char* nom_fichier, t_donnee* donnee);
+void lire_fichier(char* nom_fichier, t_donnee* donnees);
 
 
 #endif
