@@ -19,9 +19,9 @@ void lire_fichier(char* nom_fichier, t_donnee* donnees){
         t_donnee nouvelle_donnee;
         char* token = strtok(buffer, ",");
         char genre[10];
-        int taille;
-        int poids;
-        int imc;
+        float taille;
+        float poids;
+        float imc;
             if (token) {
             //Le genre
             strncpy(genre,token,sizeof(genre) -1);
@@ -33,19 +33,19 @@ void lire_fichier(char* nom_fichier, t_donnee* donnees){
             
             
             //Le taille
-            sscanf(token,"%d",&taille);
+            sscanf(token,"%f",&taille);
             token = strtok(NULL, ",");
             
             if (!token) { i++; continue; }
             
             //Le poids
-            sscanf(token,"%d",&poids);
+            sscanf(token,"%f",&poids);
             token = strtok(NULL, ",");
 
             if (!token) { i++; continue; }
 
             //IMC
-            sscanf(token,"%d",&imc);
+            sscanf(token,"%f",&imc);
 
             nouvelle_donnee.genre = (strcmp(genre,"Male") ? FEMALE : MALE);
             nouvelle_donnee.taille = taille;

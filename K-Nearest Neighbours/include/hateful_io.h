@@ -6,9 +6,9 @@ enum Genre {MALE, FEMALE};
 
 typedef struct donnee {
     enum Genre genre;
-    int taille;
-    int poids;
-    int imc;
+    float taille;
+    float poids;
+    float imc;
 }t_donnee;
 
 //Il faut mettre un pointeur aulieu de mettre un tableau directement.
