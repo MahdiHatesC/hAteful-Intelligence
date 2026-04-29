@@ -1,18 +1,33 @@
 #include "statistiques.h"
 
-void calculer_moyenne(t_donnee* donnees, float* moyenne_taille, float* moyenne_poids){
+void calculer_moyenne(t_donnee* donnees, float* moyenne_taille, float* moyenne_poids,float* moyenne_imc){
     float total_taille = 0;
     float total_poids = 0;
+    float total_imc = 0;
 
     for(int i = 0; i < NB_DONNEES; i++){
         total_poids += donnees[i].poids;
         total_taille += donnees[i].taille;
+        total_imc += donnees[i].imc;
     }
 
     *moyenne_poids = total_poids / NB_DONNEES;
     *moyenne_taille = total_taille / NB_DONNEES;
+    *moyenne_imc = total_imc / NB_DONNEES;
 }
 
-float calculer_ecarts_types(t_donnee* donnee, float moyenne_taille,float moyenne_poids){
-    
+void calculer_ecarts_types(t_donnee* donnee, float moyenne_taille,float moyenne_poids, float moyenne_imc, float* et_taille, float* et_poids, float* et_imc){
+    float total_somme_poids = 0;
+    float total_somme_taille = 0;
+    float total_somme_imc = 0;
+
+    for(int i = 0; i < NB_DONNEES; ++i){
+        total_somme_poids += pow(donnee[i].poids - moyenne_poids,2);
+        total_somme_taille += pow(donnee[i].taille - moyenne_taille,2);
+        total_somme_imc += pow(donnee[i].imc - moyenne_imc,2);
+    }
+
+    *et_taille = sqrt(total_somme_taille / NB_DONNEES);
+    *et_poids = sqrt(total_somme_poids / NB_DONNEES);
+    *et_imc = sqrt(total_somme_imc / NB_DONNEES);
 }
