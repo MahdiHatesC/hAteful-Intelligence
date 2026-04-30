@@ -5,7 +5,7 @@
 
 int main() {
     t_donnee donnees[NB_DONNEES];
-    lire_fichier("src/donnees.csv", donnees);
+    lire_fichier("../src/donnees.csv", donnees);
 
     float moyenne_taille, moyenne_poids, moyenne_imc;
     float et_taille, et_poids, et_imc;
