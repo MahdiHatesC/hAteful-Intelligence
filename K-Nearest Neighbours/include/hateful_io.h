@@ -14,5 +14,7 @@ typedef struct donnee {
 //Il faut mettre un pointeur aulieu de mettre un tableau directement.
 void lire_fichier(char* nom_fichier, t_donnee* donnees);
 
+int index_imc(float imc);
 
+int calculer_imc(float poids_livres, float taille_m);
 #endif
