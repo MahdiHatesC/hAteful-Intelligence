@@ -1,6 +1,6 @@
 #ifndef HATEFUL_IO_H
 #define HATEFUL_IO_H
-#define NB_DONNEES 200
+#define NB_DONNEES 500
 
 enum Genre {MALE, FEMALE};
 
