@@ -1,11 +1,8 @@
 #ifndef TRAITEMENT_DONNEES_H
+#define TRAITEMENT_DONNEES_H
 #include <stdlib.h>
 #include <stdio.h>
-
-#define STB_IMAGE_IMPLMENTATION
-#include "stb_image/stb_image.h"
-#include "stb_image/stb_image_write.h"
-#include "stb_image/stb_image_resize.h"
+#include "../stb_image/stb_image.h"
 
 /*
 Fonction qui retourne dans les paramètres les valeurs RGB d'un pixel donné dans l'image.
