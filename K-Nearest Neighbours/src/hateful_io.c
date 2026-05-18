@@ -61,9 +61,8 @@ void lire_fichier(char* nom_fichier, t_donnee* donnees){
     fclose(fichier);
 }
 
-int calculer_imc(float poids_livres, float taille_m){
-    float poids_kg = poids_livres * 0.453592f;
-    return poids_kg / (taille_m * taille_m);
+int calculer_imc(float poids, float taille_m){
+    return poids / (taille_m * taille_m);
 }
 
 int index_imc(float imc){

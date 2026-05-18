@@ -16,5 +16,5 @@ void lire_fichier(char* nom_fichier, t_donnee* donnees);
 
 int index_imc(float imc);
 
-int calculer_imc(float poids_livres, float taille_m);
+int calculer_imc(float poids, float taille_m);
 #endif

@@ -5,7 +5,7 @@
 
 int main() {
     t_donnee donnees[NB_DONNEES];
-    lire_fichier("../src/donnees.csv", donnees);
+    lire_fichier("src/donnees.csv", donnees);
 
     float moyenne_taille, moyenne_poids, moyenne_imc;
     float et_taille, et_poids, et_imc;
@@ -19,7 +19,7 @@ int main() {
     printf("Entrez la taille(cm):\n");
     scanf("%f", &taille);
 
-    printf("Entrez le poids:\n");
+    printf("Entrez le poids(kg):\n");
     scanf("%f", &poids);
 
     imc = calculer_imc(poids, taille);
@@ -29,7 +29,7 @@ int main() {
     poids = (poids - moyenne_poids) / et_poids;
     imc = (imc - moyenne_imc) / et_imc;
 
-    voisins_plus_proches(donnees_traitees, 3, &nb_hommes, &nb_femmes, taille, poids, imc);
+    voisins_plus_proches(donnees_traitees, 1.5, &nb_hommes, &nb_femmes, taille, poids, imc);
 
     printf("taille normalisee: %f\n", taille);
     printf("poids normalise: %f\n", poids);
@@ -37,9 +37,9 @@ int main() {
     printf("Hommes: %d, Femmes: %d\n", nb_hommes, nb_femmes);
 
     if(nb_femmes > nb_hommes){
-        printf("Vous etes une femme.");
+        printf("Vous etes une femme.\n");
     } else {
-        printf("Vous etes un homme.");
+        printf("Vous etes un homme.\n");
     }
 
     system("pause");
