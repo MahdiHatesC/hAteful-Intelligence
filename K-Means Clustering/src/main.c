@@ -14,9 +14,10 @@ int main(void){
     int nb_pixels = 0;
     for(int y = 0; y< height; y++){
         for(int x = 0; x < width; x++){
-            nb_pixels++;
+            get_pixel(img,width,x,y,&r,&g,&b,&a);
+            printf("%d\n",r);
         }
     }
-    printf("%d",nb_pixels / 1280);
+    printf("%d\n",nb_pixels / 1280);
 
 }
