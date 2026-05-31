@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "../stb_image/stb_image.h"
 #include "../stb_image/stb_image_write.h"
-#define NB_CLUSTERS 10
+#define NB_CLUSTERS 8
 
 typedef struct t_couleur{
     stbi_uc r, g, b, a; 

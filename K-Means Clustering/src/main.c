@@ -1,9 +1,15 @@
 #include "allo.h"
 #include "traitement_donnees.h"
-int main(void){
+#include "string.h"
+int main(int argc, char *argv[]){
     int width, height, channels; //Ces variables seront remplies avec l'appel de la fonction stbi_load
+    char nom_fichier[250];
 
-    unsigned char *img = stbi_load("src/fleur.jpg", &width, &height, &channels, 4);
+    printf("Entrez le nom du fichier à compresser:\n");
+    scanf("%s",nom_fichier);
+
+    unsigned char *img = stbi_load(nom_fichier, &width, &height, &channels, 4);
+    system("echo cd");
     stbi_uc r,g,b,a;
 
     if (img == NULL){
@@ -46,8 +52,6 @@ int main(void){
         calculer_centroides(clusters,pixels,width,height, &fin);
     }
 
-    printf("Cluster 0: r=%d g=%d b=%d\n", clusters[0].r, clusters[0].g, clusters[0].b);
-    printf("Pixel 0 cluster: %d\n", pixels[0].index_cluster_associe);
     ///Écrire la nouvelle image:
     
     //Appliquer les clusters:
@@ -59,11 +63,14 @@ int main(void){
         img[4*i+3] = 255;
     }
 
-    stbi_write_png("fleur_compressee.png", width, height, 4, img, width * 4);
+    stbi_write_png("image_compressee.png", width, height, 4, img, width * 4);
 
     free(pixels);
     free(clusters);
     stbi_image_free(img);
-    
+
+    printf("Votre image est prete.\n");
+
+    system("pause");
     return 0;
 }
